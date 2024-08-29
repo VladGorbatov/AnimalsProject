@@ -19,7 +19,11 @@ public class Main {
         String jsonString = "{\"name\":\"Тигрюша\"," +
                 "\"type\":\"Тигр\"," +
                 "\"age\":5," +
-                "\"weight\":85.5}";
+                "\"weight\":85.5," +
+                "\"country\":\"Россия\"," +
+                "\"color\":\"Золотой\"," +
+                "\"zooName\":\"Государственный Зоо\"}";
+
         Animal tiger = new ObjectMapper().readValue(jsonString, Animal.class);
         System.out.println(tiger);
     }
@@ -30,8 +34,11 @@ class Animal {
     public String type;
     public int age;
     public double weight;
+    public String country;
+    public String color;
+    public String zooName;
 
     public String toString() {
-        return "Animal [name=" + name + ", type=" + type + ", age=" + age + ", weight=" + weight + '}';
+        return "Animal [name=" + name + ", type=" + type + ", age=" + age + ", weight=" + weight + ", country="+country+ ", color="+color + ", zooName="+zooName+"]";
     }
 }
