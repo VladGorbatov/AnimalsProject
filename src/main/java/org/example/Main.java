@@ -4,28 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        /*
-        Animal tiger = new Animal();
-        tiger.name = "Тигрюша";
-        tiger.type = "Тигр";
-        tiger.age = 5;
-        tiger.weight = 85.5;
-
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        String jsonAnimal = mapper.writeValueAsString(tiger);
-        System.out.println(jsonAnimal);
-*/
-        String jsonString = "{\"name\":\"Тигрюша\"," +
-                "\"type\":\"Тигр\"," +
-                "\"age\":5," +
-                "\"weight\":85.5," +
-                "\"country\":\"Россия\"," +
-                "\"color\":\"Золотой\"," +
-                "\"zooName\":\"Государственный Зоо\"}";
 
-        Animal tiger = new ObjectMapper().readValue(jsonString, Animal.class);
-        System.out.println(tiger);
+        Animal tiger = new Animal("Тигрюша", "Тигр", 5, 85.5, "Россия", "Золотой", "Государственный зоопарк");
+
+        String dataAnimal = mapper.writeValueAsString(tiger);
+        System.out.println(dataAnimal);
     }
 }
 
