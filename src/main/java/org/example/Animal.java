@@ -1,19 +1,17 @@
 package org.example;
 
 class Animal {
-    public String name;
-    public String type;
-    public int age;
-    public double weight;
-    public String country;
-    public String color;
-    public String zooName;
+    private Integer id;
+    private String name;
+    private String type;
+    private int age;
+    private double weight;
+    private String country;
+    private String color;
+    private String zooName;
 
-    public String toString() {
-        return "Animal [name=" + name + ", type=" + type + ", age=" + age + ", weight=" + weight + ", country=" + country + ", color=" + color + ", zooName=" + zooName + "]";
-    }
-
-    public Animal(String name, String type, int age, double weight, String country, String color, String zooName) {
+    public Animal(Integer id, String name, String type, int age, double weight, String country, String color, String zooName) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.age = age;
@@ -23,8 +21,26 @@ class Animal {
         this.zooName = zooName;
     }
 
-    public Animal() {
-        this("Имя неизвестно", "Вид неизвестен", 0, 0.0, "Страна происхождения неизвестна", "Окрас неизвестен", "Место содерждания неизвестно");
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                ", country='" + country + '\'' +
+                ", color='" + color + '\'' +
+                ", zooName='" + zooName + '\'' +
+                '}';
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -2,14 +2,16 @@ package org.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
+        File lsitAnimals = new File("C:\\Users\\vladg\\Documents\\Animals\\src\\main\\resources\\listAnimals.json");
+        Animal animal = mapper.readValue(lsitAnimals, Animal.class);
 
-        Animal tiger = new Animal("Тигрюша", "Тигр", 5, 85.5, "Россия", "Золотой", "Государственный зоопарк");
-
-        String dataAnimal = mapper.writeValueAsString(tiger);
-        System.out.println(dataAnimal);
+        System.out.println(animal);
     }
 }
 
