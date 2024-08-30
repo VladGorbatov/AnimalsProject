@@ -1,7 +1,6 @@
 package org.example;
 
 class Animal {
-    private Integer id;
     private String name;
     private String type;
     private int age;
@@ -11,7 +10,6 @@ class Animal {
     private String zooName;
 
     public Animal(Integer id, String name, String type, int age, double weight, String country, String color, String zooName) {
-        this.id = id;
         this.name = name;
         this.type = type;
         this.age = age;
@@ -24,8 +22,7 @@ class Animal {
     @Override
     public String toString() {
         return "Animal{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", age=" + age +
                 ", weight=" + weight +
@@ -33,14 +30,6 @@ class Animal {
                 ", color='" + color + '\'' +
                 ", zooName='" + zooName + '\'' +
                 '}';
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
