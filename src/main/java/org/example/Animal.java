@@ -9,7 +9,7 @@ class Animal {
     private String color;
     private String zooName;
 
-    public Animal(Integer id, String name, String type, int age, double weight, String country, String color, String zooName) {
+    public Animal(String name, String type, int age, double weight, String country, String color, String zooName) {
         this.name = name;
         this.type = type;
         this.age = age;
@@ -17,6 +17,10 @@ class Animal {
         this.country = country;
         this.color = color;
         this.zooName = zooName;
+    }
+
+    public Animal() {
+        this("Имя неизвестно", "Вид неизвестен", 0, 0, "Страна происхождения неизвестна", "Окрас неизвестен", "Место содержания неизвестно");
     }
 
     @Override
