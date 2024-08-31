@@ -11,14 +11,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         File listAnimals = new File("listAnimals.json");
-        Animal animal = objectMapper.readValue(listAnimals, Animal.class);
 
-        System.out.println(animal+"\n");
-
-        Map<String, Object> map = objectMapper.readValue(listAnimals, new TypeReference<Map<String, Object>>() {
+        Map<String, Object> map = objectMapper.readValue(listAnimals, new TypeReference<>() {
         });
 
-        for(String key : map.keySet()) {
+        for (String key : map.keySet()) {
             System.out.println(key + ": " + map.get(key));
         }
     }
